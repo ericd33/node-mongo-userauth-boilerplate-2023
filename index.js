@@ -36,15 +36,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-
-
 app.use('/', authRouter);
 
 
-app.listen(3000, ()=> {
+app.listen(process.env.NODE_LOCAL_PORT, ()=> {
     console.log('Server is running on port 3000');
 })
